@@ -32,6 +32,16 @@ if((_isbong) && _canDo) then {
     player removeAction s_player_pipe;
     s_player_pipe = -1;
         };
+	
+Still in the fn_selfactions look for
+
+player removeAction s_player_manageDoor;
+    s_player_manageDoor = -1;
+
+add this bellow
+
+player removeAction s_player_pipe;
+    s_player_pipe = -1;
 		
 save and close
 
