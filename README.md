@@ -18,7 +18,7 @@ Download from the github
 
 Place the smokeweed folder in your customs folder. If you dont have one create one.
 
-Open your custom fn_selfactions.sqf
+1. Open your custom fn_selfactions.sqf
 
 Place this at the bottom
 
@@ -45,7 +45,7 @@ player removeAction s_player_pipe;
 		
 save and close
 
-Open your extra_rc.sqf and add this
+2. Open your extra_rc.sqf and add this
 
 class ItemKiloHemp {
         class smokeweed {
@@ -53,10 +53,14 @@ class ItemKiloHemp {
             script = "execVM 'custom\smokeweed\smokeweed.sqf'";
         };
     };
+    
+2b. Alternatively for the right click, you can do this to your config.sqf if you use  the Deploy anything script
+
+["ItemKiloHemp","Smoke that shit","execVM 'custom\smokeweed\smokeweed.sqf';","true"] // only comma at the end if its not the last line
 	
 save and close
 
-Open your description.extra_rc
+3. Open your description.extra_rc
 
 Add this in your CfgSounds
 
@@ -75,6 +79,15 @@ Add this in your CfgSounds
 	};	
 	
 Save and close
+
+4. Open your variables.sqf
+
+Look for 
+
+dayz_resetSelfActions = {
+add this before the closing bracket     };
+
+s_player_pipe = -1;
 
 Repack your mission and you're good to go!
 
